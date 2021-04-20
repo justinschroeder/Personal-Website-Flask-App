@@ -53,7 +53,7 @@ Nav
 *******/
 
 nav {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 .navbar-brand {
@@ -98,17 +98,19 @@ Header  - Homepage
 .header {
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 5rem;
-    text-align: center;
+    margin-top: 3rem;
+    text-align: center
 }
 
 .header h1{
-    font-size: 32px;
+    font-size: 64px;
     font-weight: bold;
+    color: var(--primary-text)
 }
 
-.header p {
-    font-size: 20px;
+.header h2 {
+    font-size: 48px;
+    font-weight: bold;
     color: var(--secondary-text);
 }
 
@@ -569,10 +571,10 @@ Media Queries
         font-size: 62px;
     }
 
-    .header h1 {
+    /* .header h1 {
         font-size: 64px;
         margin-bottom: 2rem;
-    }
+    } */
 
     .header img {
         height: 320px;
