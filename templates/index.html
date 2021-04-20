@@ -34,10 +34,9 @@
                           Projects
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="#project1">Project 1</a></li>
-                          <li><a class="dropdown-item" href="#project2">Project 2</a></li>
-                          <li><a class="dropdown-item" href="#project3">Project 3</a></li>
-                          <li><a class="dropdown-item" href="#project4">Project 4</a></li>
+                        {% for project in projects %}
+                          <li><a class="dropdown-item" href="{{ url_for('project', id=project.id) }}">{{ project.title }}</a></li>
+                        {% endfor %}
                         </ul>
                       </li>
                       <li class="nav-item">
@@ -83,26 +82,25 @@
             </ul>
         </section>
         <section id="projects">
+        {% for project in projects %}
             <div id="triangle3"></div>
             <i class="fas fa-file-code"></i>
             <h2>Projects</h2>
             <div id="project-list">
                 <div id="project1" class="a-project">
-                    <h3>Project Title</h3>
-                    <a href="#" class="github-btn">
+                    <h3>{{ project.title }}</h3>
+                    <a href="{{ project.url }}" class="github-btn">
                         <i class="fab fa-github"></i>
                         View on GitHub
                     </a>
                     <p>
-                        Pastry wafer chocolate cake caramels. 
-                        Gummi bears pudding sugar plum macaroon. 
+                        {{ project.description }}
                     </p>
                     <p>
-                        Skills: Pastry wafer chocolate cake caramels. 
-                        Gummi bears pudding sugar plum macaroon. 
+                        Skills: {project.skills}
                     </p>
                 </div>
-                <div id="project2" class="a-project">
+                <!-- <div id="project2" class="a-project">
                     <h3>Project Title</h3>
                     <a href="#" class="github-btn">
                         <i class="fab fa-github"></i>
@@ -148,7 +146,8 @@
                     </p>
                 </div>
             </div>
-            <div id="triangle4"></div>
+            <div id="triangle4"></div> -->
+        {% endfor %}
         </section>
         <section id="contact">
             <i class="fas fa-paper-plane"></i>

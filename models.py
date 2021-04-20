@@ -19,8 +19,8 @@ class Project(db.Model):
 
     def __repr__(self):
         return f'''<Project (
-        Title: {self.title} 
-        Completed: {self.completed} 
-        Description: {self.description} 
-        Skills: {self.skills} 
-        GitHub: {self.url})>'''
+                Title: {self.title} 
+                Completed: {self.completed} 
+                Description: {self.description} 
+                Skills: {self.skills} 
+                GitHub: {self.url})>'''
