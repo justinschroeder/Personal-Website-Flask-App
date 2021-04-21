@@ -46,6 +46,7 @@ h3 {
 
 body {
     overflow-x: hidden;
+    background-color: black;
 }
 
 /*******
@@ -156,11 +157,18 @@ Header - Detail
 About
 *******/
 
-#about {
+#aout {
     text-align: center;
     background-color: var(--primary);
     padding: 5%;
     position: relative;
+    transform: scale(1);
+    transition: all 1s;
+}b
+
+#about:hover {
+    transform: scale(1.1);
+    transition: all 1s;
 }
 
 #triangle1 {
