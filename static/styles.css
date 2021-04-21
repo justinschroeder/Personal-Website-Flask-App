@@ -2,12 +2,13 @@
 Colors
 *******/
 :root {
-    --primary-text: #293550;
-    --secondary-text: #4d6191;
-    --primary: #2b523f;
-    --secondary: #90d1a4;
-    --accent: #4d6191;
-    --white:  #fff;
+    --primary-text: #6b1c1c;
+    --secondary-text: #e03b3b;
+    --primary: #2f4439;
+    --secondary: #232b3a;
+    --third: #3d3d3d;
+    --accent: #dad2ae;
+    --white:  rgb(255, 255, 255);
 }
 
 /* :root {
@@ -46,7 +47,13 @@ h3 {
 
 body {
     overflow-x: hidden;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+#about,
+#skills,
+#projects {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*******
@@ -54,7 +61,7 @@ Nav
 *******/
 
 nav {
-    /* margin-top: 1rem; */
+    margin-top: 1rem;
 }
 
 .navbar-brand {
@@ -65,31 +72,29 @@ nav {
 .navbar-brand:hover,
 .navbar-brand:focus {
     color: var(--primary-text);
+    transform: scale(2);
 }
 
 .nav-item a {
-    color: var(--primary-text);
+    color: var(--accent);
     font-size: 20px;
 }
 
 .nav-item a:hover,
 .nav-item a:focus {
     color: var(--white);
-    background-color: var(--accent);
-    padding-left: 10px;
+    transition: all .5s;
 }
 
 .toggle {
     color: var(--primary-text);
     border: none;
-    background-color: transparent;
     font-size: 20px;
 }
 
 .dropdown-menu li a:hover,
 .dropdown-menu li a:focus {
-    background-color: var(--accent);
-    color: var(--white);
+    background-color: var(--third);   
 }
 
 /******************
@@ -97,20 +102,19 @@ Header  - Homepage
 ******************/
 
 .header {
-    margin-left: 5%;
-    margin-right: 5%;
     margin-top: 3rem;
+    margin-bottom: 35rem ;
     text-align: center
 }
 
 .header h1{
-    font-size: 64px;
+    font-size: 60px;
     font-weight: bold;
     color: var(--primary-text)
 }
 
 .header h2 {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: bold;
     color: var(--secondary-text);
 }
@@ -157,41 +161,31 @@ Header - Detail
 About
 *******/
 
-#aout {
+/* .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 25%;
+  } */
+
+#about {
     text-align: center;
-    background-color: var(--primary);
+    background-color: var(--accent);
     padding: 5%;
     position: relative;
+    border-radius: 10px;
     transform: scale(1);
-    transition: all 1s;
-}b
+    transition: all .75s;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
 
 #about:hover {
-    transform: scale(1.1);
-    transition: all 1s;
-}
-
-#triangle1 {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 50px solid var(--primary);
-    border-bottom: 50px solid transparent;
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-}
-
-#triangle2 {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 100px solid var(--primary);
-    position: absolute;
-    bottom: -100px;
-    left: 5px;
+    transform: scale(1.05);
+    transition: all .75s;
 }
 
 #about  h2, 
@@ -206,7 +200,7 @@ About
 }
 
 #about p {
-    text-align: left;
+    text-align: center;
     margin-bottom: 2rem;
 }
 
@@ -215,12 +209,26 @@ Skills
 *******/
 
 #skills {
-    margin-top: 7rem;
     text-align: center;
+    background-color: var(--accent);
+    padding: 5%;
+    position: relative;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: all .75s;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+#skills:hover {
+    transform: scale(1.05);
+    transition: all .75s;
 }
 
 #skills .fas {
-    color: var(--accent);
+    color: var(--secondary-text);
     font-size: 34px;
     margin-bottom: 2rem;
 }
@@ -231,12 +239,12 @@ Skills
 
 #skills ul {
     padding: 0%;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 }
 
 #skills li {
     list-style-type: none;
-    line-height: 50px;
+    line-height: 30px;
 }
 
 /*******
@@ -244,20 +252,21 @@ Projects
 *******/
 
 #projects {
-    background-color: var(--secondary);
-    position: relative;
     text-align: center;
+    background-color: var(--secondary);
     padding: 5%;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: all .75s;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
-#triangle3 {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 75px solid var(--white);
-    border-left: 75px solid transparent;
-    right: 0;
-    top: 0;
+#projects:hover {
+    transform: scale(1.05);
+    transition: all .75s;
 }
 
 #projects .fas {
@@ -294,18 +303,6 @@ Projects
     margin-top: 2rem;
 }
 
-#projects #triangle4 {
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-right: 100px solid var(--secondary);
-    border-bottom: 50px solid transparent;
-    position: absolute;
-    bottom: -50px;
-    right: 0;
-    transform: rotate(15deg);
-    overflow: hidden;
-}
 
 /*******
 Contact
@@ -404,17 +401,6 @@ Description - Detail
 #project-desc p {
     text-align: left;
     padding-bottom: 4rem;
-}
-
-#triangle6 {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 100px solid var(--secondary);
-    position: absolute;
-    bottom: -75px;
-    right: -65px;
 }
 
 /********************
@@ -527,25 +513,6 @@ EXCEEDS - About Page
     text-align: center;
 }
 
-#about-page #triangle7,
-#about-page #triangle8 {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid var(--secondary);
-    position: absolute;
-    top: -75px;
-}
-
-#about-page #triangle7 {
-    right: -50px;
-}
-
-#about-page #triangle8 {
-    right: 0px;
-}
-
 #about-page h2 {
     margin-bottom: 4rem;
 }
@@ -575,7 +542,7 @@ EXCEEDS - About Page
 Media Queries
 *******/
 
-@media (min-width: 992px){
+@media (min-width: 600px){
     h2 {
         font-size: 62px;
     }
@@ -609,13 +576,6 @@ Media Queries
         padding-right: 5px;
     }
 
-    #about,
-    #projects,
-    #contact,
-    #about-page {
-        /* padding: 5% 15%; */
-    }
-
     #about p {
         padding-left: 5%;
         padding-right: 5%;
@@ -640,15 +600,6 @@ Media Queries
         margin-right: 15%;
     }
 
-    #contact {
-        /* margin-top: 4rem;
-        margin-bottom: 6rem; */
-    }
-
-    #contact h2 {
-        /* margin-bottom: 5rem; */
-    }
-
     .footer .socials i {
         padding: 0  20px;
     }
@@ -665,7 +616,7 @@ Media Queries
     }
 }
 
-@media (min-width: 1200px){
+@media (min-width: 600px){
     .navigation .nav-item {
         padding-left: 15px;
         padding-right: 15px;
