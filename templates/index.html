@@ -1,29 +1,39 @@
 {% extends 'layout.html' %}
     {% block content %}
         <section class="header">
-            <h1>Justin Schroeder</h1>
-            <h2>Python Developer</h2>
-            <i class="fas fa-mountain"></i>
+            <h1>Hi, I'm Justin.</h1>
+            <h2>Python Developer.</h2>
+            <p>
+                Developer. Engineer. Skier. Disc Golfer. Dog Dad.
+            </p>
+            <p>
+                <a href="{{ url_for('about') }}" style="text-decoration: underline;">More about me...</a>
+            </p>
+            <!-- <i class="fas fa-code"></i>
             <i class="fas fa-beer"></i>
             <i class="fas fa-dog"></i>
+            <i class="fas fa-mountain"></i> -->
             <!-- <img src="/static/img/my_headshot.jpg" alt="Headshot of myself"> -->
+        
         </section>
-        <a href="{{ url_for('about') }}" style="text-decoration: none;">
-            <section id="about">
-                <h2>About Me</h2>
-                <p>
-                    Stuff about me...
-                </p>
-            </section>
-        </a>
-        <!-- <div class="row">
-            {% for project in projects %}
-                <div class='column'>{{ project.title }}</div>
-            {% endfor %}
-        </div> -->
+        <section id="skills">
+            <i class="fas fa-laptop-code"></i>
+            <h2>Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>Flask</li>
+                <li>SQLAlchemy</li>
+                <li>SQL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>GitHub</li>
+                <li>Visual Studio Code</li>
+                <li>Atom</li>
+            </ul>
+        </section>    
             <section id="projects">
-                <i class="fas fa-file-code"></i>
                 <h2>Projects</h2>
+                    <i class="fas fa-file-code"></i>
                     {% for project in projects %}
                             <div id="project" class="a-project">
                                 <a href="{{ url_for('project', id=project.id) }}" style="text-decoration: none;"><h3>{{ project.title }}</h3></a>
@@ -37,33 +47,6 @@
                             </div>
                     {% endfor %}
             </section>
-        <section id="skills">
-            <i class="fas fa-laptop-code"></i>
-            <h2>Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>Flask</li>
-                <li>SQLAlchemy</li>
-                <li>SQL</li>
-                <li>HTML/CSS</li>
-                <li>GitHub</li>
-                <li>Visual Studio Code</li>
-                <li>Atom</li>
-            </ul>
-        </section>        
-        <section id="contact">
-            <i class="fas fa-paper-plane"></i>
-            <h2>Contact Me</h2>
-            <p>
-                Pastry wafer chocolate cake caramels. 
-                Gummi bears pudding sugar plum macaroon. 
-                Cake tart apple pie soufflé sweet sweet. 
-                Topping bear claw lemon drops gingerbread biscuit pudding fruitcake icing chocolate bar.
-            </p>
-            <p>
-                <i class="fas fa-envelope"></i>
-                my_email@email.com
-            </p>
-          </section>
-  
+    
+         
     {% endblock %}

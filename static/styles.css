@@ -2,13 +2,14 @@
 Colors
 *******/
 :root {
-    --primary-text: #6b1c1c;
-    --secondary-text: #e03b3b;
-    --primary: #2f4439;
-    --secondary: #232b3a;
-    --third: #3d3d3d;
-    --accent: #dad2ae;
-    --white:  rgb(255, 255, 255);
+    --primary-text: #eaf3ff;
+    --secondary-text: #5e8ab3;
+    --third-text: #1f1f1f9d;
+    --accent-text: #ffba6c;
+    --primary: #1d1d1d;
+    --secondary: #aaaaaa;
+    --third: #2a3a4b;
+    --accent: #a8a591;
 }
 
 /* :root {
@@ -36,6 +37,11 @@ a {
 }
 
 h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+i {
     font-size: 30px;
     font-weight: bold;
 }
@@ -47,54 +53,218 @@ h3 {
 
 body {
     overflow-x: hidden;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
 }
 
-#about,
-#skills,
-#projects {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
-}
+
 
 /*******
 Nav
 *******/
-
-nav {
-    margin-top: 1rem;
+.menu {
+    background: black;
+    height: 4rem;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+}
+.menu ol {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+.menu > ol {
+    max-width: 1000px;
+    padding: 0 2rem;
+    display: flex;
+}
+.menu > ol > .menu-item {
+    flex: 1;
+    padding: 0.75rem 0;
+}
+.menu > ol > .menu-item:after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    bottom: 5px;
+    left: calc(50% - 2px);
+    background: #FECEAB;
+    will-change: transform;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+.menu > ol > .menu-item:hover:after {
+    transform: scale(1);
+}
+.menu-item {
+    position: relative;
+    line-height: 2.5rem;
+    text-align: center;
+}
+.menu-item a {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    color: #FFF;
 }
 
-.navbar-brand {
-    color: var(--primary-text);
-    font-size: 20px;
+.menu-item a:hover {
+    color: var(--accent-text);
+    transition: all .25s;
 }
 
-.navbar-brand:hover,
-.navbar-brand:focus {
-    color: var(--primary-text);
-    transform: scale(2);
+.sub-menu .menu-item {
+    padding: 0.75rem 0;
+    background: black;
+    opacity: 0;
+    transform-origin: bottom;
+    animation: enter 0.2s ease forwards;
+}
+.sub-menu .menu-item:nth-child(1) {
+    animation-duration: 0.2s;
+    animation-delay: 0s;
+}
+.sub-menu .menu-item:nth-child(2) {
+    animation-duration: 0.3s;
+    animation-delay: 0.1s;
+}
+.sub-menu .menu-item:nth-child(3) {
+    animation-duration: 0.4s;
+    animation-delay: 0.2s;
+}
+.sub-menu .menu-item:hover {
+    color: var(--accent-text);
+    transition: all .25s;
+
+}
+.sub-menu .menu-item a {
+    padding: 0 0.75rem;
+}
+@media screen and (max-width: 600px) {
+    .sub-menu .menu-item {
+    background: #C06C84;
+    }
 }
 
-.nav-item a {
-    color: var(--accent);
-    font-size: 20px;
+@media screen and (max-width: 600px) {
+    .menu {
+    position: relative;
+    }
+    .menu:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    right: 1rem;
+    width: 30px;
+    height: 4px;
+    background: #FFF;
+    box-shadow: 0 10px #FFF, 0 -10px #FFF;
+    }
+    .menu > ol {
+    display: none;
+    background: #F67280;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    animation: fade 0.2s ease-out;
+    }
+    .menu > ol > .menu-item {
+    flex: 0;
+    opacity: 0;
+    animation: enter 0.3s ease-out forwards;
+    }
+    .menu > ol > .menu-item:nth-child(1) {
+    animation-delay: 0s;
+    }
+    .menu > ol > .menu-item:nth-child(2) {
+    animation-delay: 0.1s;
+    }
+    .menu > ol > .menu-item:nth-child(3) {
+    animation-delay: 0.2s;
+    }
+    .menu > ol > .menu-item:nth-child(4) {
+    animation-delay: 0.3s;
+    }
+    .menu > ol > .menu-item:nth-child(5) {
+    animation-delay: 0.4s;
+    }
+    .menu > ol > .menu-item + .menu-item {
+    margin-top: 0.75rem;
+    }
+    .menu > ol > .menu-item:after {
+    left: auto;
+    right: 1rem;
+    bottom: calc(50% - 2px);
+    }
+    .menu > ol > .menu-item:hover {
+    z-index: 1;
+    }
+    .menu:hover > ol {
+    display: flex;
+    }
+    .menu:hover:after {
+    box-shadow: none;
+    }
 }
 
-.nav-item a:hover,
-.nav-item a:focus {
-    color: var(--white);
-    transition: all .5s;
+.sub-menu {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    display: none;
+    z-index: 1;
+}
+.menu-item:hover > .sub-menu {
+    display: block;
 }
 
-.toggle {
-    color: var(--primary-text);
-    border: none;
-    font-size: 20px;
+@media screen and (max-width: 600px) {
+    .sub-menu {
+    width: 100vw;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    }
 }
 
-.dropdown-menu li a:hover,
-.dropdown-menu li a:focus {
-    background-color: var(--third);   
+html, body {
+    font-size: 16px;
+    font-family: "Fira Mono", monospace;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+*:before, *:after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+@keyframes enter {
+    from {
+    opacity: 0;
+    transform: scaleY(0.98) translateY(10px);
+    }
+    to {
+    opacity: 1;
+    transform: none;
+    }
+}
+@keyframes fade {
+    from {
+    opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
 }
 
 /******************
@@ -102,21 +272,36 @@ Header  - Homepage
 ******************/
 
 .header {
-    margin-top: 3rem;
-    margin-bottom: 35rem ;
-    text-align: center
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    text-align: left;
+    text-shadow: 2px 2px 8px #0000006c;
 }
 
 .header h1{
-    font-size: 60px;
+    font-size: 80px;
     font-weight: bold;
-    color: var(--primary-text)
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
 }
 
 .header h2 {
-    font-size: 40px;
+    font-size: 80px;
     font-weight: bold;
-    color: var(--secondary-text);
+    color: var(--accent-text);
+    margin-bottom: 2rem;
+}
+
+.header i {
+    font-size: 80px;
+    margin-top: 2rem;
+    color: var(--primary-text);
+    margin-inline: 1.5rem;
+}
+
+.header a {
+    color: var(--primary-text)
 }
 
 .header img {
@@ -124,13 +309,31 @@ Header  - Homepage
     width: 180px;
     border-radius: 10%;
     object-fit: cover;
-    margin-bottom: 6rem;
     margin-top: 4rem;
 }
 
 /***************
 Header - Detail
 ***************/
+.header-add {
+    margin-top: 5rem;
+    margin-bottom: 5rem ;
+    text-align: center;
+    text-shadow: 2px 2px 8px #0000006c;
+}
+
+.header-add h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.header-about {
+    margin-top: 3rem;
+    margin-bottom: 5rem ;
+    text-align: center;
+    text-shadow: 2px 2px 8px #0000006c;
+}
+
 
 .header .github-btn {
     display: inline-block;
@@ -170,17 +373,15 @@ About
   } */
 
 #about {
-    text-align: center;
-    background-color: var(--accent);
-    padding: 5%;
+    padding: 1%;
     position: relative;
     border-radius: 10px;
     transform: scale(1);
     transition: all .75s;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
 }
 
 #about:hover {
@@ -190,17 +391,19 @@ About
 
 #about  h2, 
 #about p {
-    color: var(--white);
-    margin: auto;
+    color: var(--primary-text);
+
 }
 
 #about h2 {
-    margin-top: 1rem;
+    text-align: right;
+    font-size: 200%;
+    margin-top: 0rem;
     margin-bottom: 2rem;
 }
 
 #about p {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
 }
 
@@ -208,43 +411,42 @@ About
 Skills
 *******/
 
-#skills {
-    text-align: center;
-    background-color: var(--accent);
-    padding: 5%;
-    position: relative;
-    border-radius: 10px;
-    transform: scale(1);
-    transition: all .75s;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+/* #skills {
+
+
 }
 
 #skills:hover {
     transform: scale(1.05);
     transition: all .75s;
-}
+} */
 
 #skills .fas {
     color: var(--secondary-text);
     font-size: 34px;
-    margin-bottom: 2rem;
+    margin-left: 10%;
 }
 
 #skills h2 {
-    margin-bottom: 3rem;
+    margin-left: 10%;
+
 }
 
 #skills ul {
-    padding: 0%;
-    margin-bottom: 3rem;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    padding: 2%;
+    margin-left: -10%;
 }
 
 #skills li {
     list-style-type: none;
-    line-height: 30px;
+    line-height: 10px;
+}
+
+#skill i {
+    color: var(--primary-text)
 }
 
 /*******
@@ -252,16 +454,17 @@ Projects
 *******/
 
 #projects {
-    text-align: center;
-    background-color: var(--secondary);
-    padding: 5%;
+    text-align: left;
+    padding: 1%;
+    position: relative;
     border-radius: 10px;
     transform: scale(1);
     transition: all .75s;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+
 }
 
 #projects:hover {
@@ -273,7 +476,7 @@ Projects
     font-size: 34px;
     margin-bottom: 2rem;
     margin-top: 4rem;
-    color: var(--accent);
+    color: var(--primary-text);
 }
 
 #projects .a-project {
@@ -285,6 +488,7 @@ Projects
 #projects .a-project h3 {
     margin-bottom: 2rem;
     margin-top: 3rem;
+    color: var(--accent-text)
 }
 
 .github-btn {
@@ -323,12 +527,12 @@ Contact
 }
 
 #contact  h2 {
-    margin-bottom: 2rem;
-    font-size: 48px;
+    margin-bottom: 1rem;
+    font-size: 30px;
 }
 
 #contact p {
-    text-align: left;
+    text-align: center;
     padding-left: 20%;
     padding-right: 20%;
     margin-bottom: 2rem;
@@ -382,16 +586,6 @@ Description - Detail
     padding-left: 5%;
 }
 
-#triangle5 {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid var(--secondary);
-    position: absolute;
-    top: -75px;
-    left: -65px;
-}
 
 #project-desc h2 {
     padding-top: 3rem;
@@ -557,9 +751,9 @@ Media Queries
         width: 320px;
     }
 
-    .navigation {
+    /* .navigation {
         width: fit-content;
-        margin: auto;
+        margin: auto; 
     }
 
     .navigation .navbar-brand {
@@ -574,7 +768,7 @@ Media Queries
     .navigation .nav-item {
         padding-left: 5px;
         padding-right: 5px;
-    }
+    } */
 
     #about p {
         padding-left: 5%;
