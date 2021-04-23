@@ -41,11 +41,6 @@ h2 {
     font-weight: bold;
 }
 
-i {
-    font-size: 30px;
-    font-weight: bold;
-}
-
 h3 {
     font-size: 25px;
     font-weight: bold;
@@ -145,7 +140,7 @@ Nav
 }
 @media screen and (max-width: 600px) {
     .sub-menu .menu-item {
-    background: #C06C84;
+    background: #000000;
     }
 }
 
@@ -165,7 +160,7 @@ Nav
     }
     .menu > ol {
     display: none;
-    background: #F67280;
+    background: #000000;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
@@ -282,8 +277,7 @@ Header  - Homepage
     font-weight: bold;
     color: var(--secondary-text);
     margin-bottom: 2rem;
-    font-size: 100px;
-    width: 100%;
+    font-size: 80px;
 	text-transform: uppercase;
 	background: linear-gradient(to right, #003cff 10%, #4d76ff 25%);
 	-webkit-background-clip: text;
@@ -291,7 +285,7 @@ Header  - Homepage
 }
 
 .header h2 {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
 	text-transform: uppercase;
 	background: linear-gradient(to right, #00ffb3 10%, #6bffd2 25%);
@@ -417,34 +411,33 @@ About
 /*******
 Skills
 *******/
-
-/* #skills {
-
-
+#skills {
+    background-color: rgba(27, 27, 27, 0.466);
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
+    padding: 1%;
 }
 
-#skills:hover {
-    transform: scale(1.05);
-    transition: all .75s;
-} */
-
-#skills .fas {
-    color: var(--secondary-text);
-    font-size: 34px;
-    margin-left: 10%;
-}
 
 #skills h2 {
-    margin-left: 10%;
+	background: linear-gradient(to right, #003cff 45%, #4d76ff 55%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    text-align: center;
 
 }
 
-#skills ul {
-    background-color: white;
-    border-radius: 10px;
-    position: relative;
-    padding: 2%;
-    margin-left: -10%;
+#skills i {
+    color: rgb(30, 45, 255);
+    font-size: 50px;
+    text-align: left;
+    margin-left: 10%;
+    float: left;
+}
+
+#skills ul {    
+    text-align: center;
 }
 
 #skills li {
@@ -452,28 +445,50 @@ Skills
     line-height: 10px;
 }
 
-#skill i {
-    color: var(--primary-text)
-}
 
 /*******
 Projects
 *******/
 
 #projects {
-    text-align: left;
-
+    background-color: rgba(27, 27, 27, 0.466);
+    margin: 5%;
+    border-radius: 10px;
+    padding: 1%;
 }
 
-/* #projects .fas {
-    font-size: 34px;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
-    color: var(--primary-text);
-} */
+#projects h2 {
+	background: linear-gradient(to right, #00ffb3 45%, #6bffd2 55%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    text-align: center;
+}
 
+#projects .column{
+    columns: 2;
+}
 
-.github-btn {
+#projects ul {
+    margin-top: -3rem;
+}
+
+#projects li {
+    list-style-type: none;
+}
+
+#projects .title {
+    margin-left: 10%;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+#projects .url {
+    margin-left: 10%;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+/* .github-btn {
     border-radius: 10px;
     background-color: var(--primary);
     padding: 8px 15px;
@@ -487,12 +502,9 @@ Projects
 
 
 #projects .column {
-    text-align: left;
     background-color:var(--primary);
     border-radius: 10px;
     padding: 2%;
-    height: 100px;
-    position: relative;
     margin-right: 10%;
     margin-bottom: 2%;
 }
@@ -504,13 +516,13 @@ Projects
 #projects .column:hover {
     transform: scale(1.05);
     transition: all .75s;
-}
+} */
 
 /*******
 Contact
 *******/
 
-#contact {
+/* #contact {
     margin-left: 5%;
     margin-right: 5%;
     text-align: center;
@@ -518,7 +530,7 @@ Contact
 }
 
 #contact .fa-paper-plane {
-    /* font-size: 34px; */
+    font-size: 34px;
     margin-bottom: 1rem;
     margin-top: 3rem;
     color: var(--accent);
@@ -538,16 +550,16 @@ Contact
 
 #contact p  i {
     margin-right: 15px;
-}
+} */
 
 /*******
 Footer
 *******/
 
 .footer {
-    background-color: var(--primary);
     text-align: center;
-    padding-bottom: 2rem;
+    padding-bottom: .5rem;
+    background-color: rgb(22, 22, 22);
 }
 
 .footer  i,
@@ -558,8 +570,8 @@ Footer
 }
 
 .footer .socials  {
-    padding-top: 3rem;
-    margin-bottom: 2rem;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .footer .socials i {
@@ -773,23 +785,17 @@ Media Queries
         padding-right: 5%;
     }
 
-    #skills .fas,
     #projects .fa-file-code,
     #contact .fa-paper-plane {
         font-size: 50px;
-        margin-bottom: 4rem;
     }
 
-    #skills .fas {
-        margin-bottom: 6rem;
-    }
+
 
     #skills ul {
-        -webkit-column-count: 2;  /* Chrome/Opera, Safari */
-        -moz-column-count: 2; /* Mozilla Firefox */
-        column-count: 2;
-        margin-left: 15%;
-        margin-right: 15%;
+        column-count: 3;
+        text-align: center;
+        list-style-type: none;
     }
 
     .footer .socials i {

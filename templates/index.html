@@ -17,7 +17,7 @@
         
         </section>
         <section id="skills">
-            <i class="fas fa-laptop-code"></i>
+            <!-- <i class="fas fa-laptop-code"></i> -->
             <h2>Skills</h2>
             <ul>
                 <li>Python</li>
@@ -33,23 +33,16 @@
         </section>
         <section id="projects">
             <h2>Projects</h2>
-            <div class="container">
-                {% for row in projects|batch(4) %}
-                <div class="row">
-                    {% for project in row %}
-                        <div class="column">
-                            <p>{{ project.title }}</p>
-                        </div>
-                        <div class="column">
-                            <p>{{ project.title }}</p>
-                        </div>
-                        <div class="column">
-                            <p>{{ project.title }}</p>
-                        </div>
+                <ul>
+                    {% for project in projects %}
+                    <div class="column">
+                        <li>
+                            <p class="title">{{ project.title }}</p>
+                            <p class="url">{{ project.url }}</p>
+                        </li>
+                    </div>
                     {% endfor %}
-                </div>
-                {% endfor %}
-            </div>
+                </ul>
         </section>
             <!-- <section id="projects">
                 <h2>Projects</h2>
