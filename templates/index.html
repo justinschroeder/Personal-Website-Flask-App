@@ -30,8 +30,28 @@
                 <li>Visual Studio Code</li>
                 <li>Atom</li>
             </ul>
-        </section>    
-            <section id="projects">
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="container">
+                {% for row in projects|batch(4) %}
+                <div class="row">
+                    {% for project in row %}
+                        <div class="column">
+                            <p>{{ project.title }}</p>
+                        </div>
+                        <div class="column">
+                            <p>{{ project.title }}</p>
+                        </div>
+                        <div class="column">
+                            <p>{{ project.title }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+            <!-- <section id="projects">
                 <h2>Projects</h2>
                     <i class="fas fa-file-code"></i>
                     {% for project in projects %}
@@ -46,7 +66,7 @@
                                 </p>
                             </div>
                     {% endfor %}
-            </section>
-    
+            </section> -->
+        
          
     {% endblock %}
