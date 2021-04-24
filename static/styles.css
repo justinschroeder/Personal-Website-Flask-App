@@ -268,7 +268,7 @@ Header  - Homepage
 
 .header {
     margin-top: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     margin-left: 10%;
     text-align: left;
 }
@@ -711,20 +711,26 @@ EXCEEDS - About Page
 ********************/
 
 #about-page {
-    background-color: var(--secondary);
-    position: relative;
-    padding: 3rem 5%;
-    text-align: center;
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #about-page h2 {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+#about-page .header h1 {
+    text-align: center;
 }
 
 #about-page p {
     margin-top: 2rem;
     text-align: left;
     margin-bottom: 5rem;
+    margin-right: 2rem;
+    display: inline-block;
 }
 
 #about-page a {
@@ -740,6 +746,13 @@ EXCEEDS - About Page
     color: var(--white);
     font-size: 20px;
     padding-right: 10px;
+}
+
+#about-page img {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 10%;
+    width: 25%;
 }
 
 /*******
