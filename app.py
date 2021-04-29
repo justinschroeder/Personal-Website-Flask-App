@@ -48,7 +48,7 @@ def edit_project(id):
                            projects=projects)
 
 
-@app.route('/project/<id>', methods=['GET', 'POST'])    
+@app.route('/project/<id>', methods=['GET', 'POST'])
 def project(id):
     projects = Project.query.all()
     project = Project.query.get_or_404(id)

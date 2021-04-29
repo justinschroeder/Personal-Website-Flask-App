@@ -15,11 +15,10 @@ class Project(db.Model):
     skills = db.Column('Skills', db.String())
     url = db.Column('GitHub Link', db.String())
 
-
     def __repr__(self):
         return f'''<Project (
-                Title: {self.title} 
-                Completed: {self.completed} 
-                Description: {self.description} 
-                Skills: {self.skills} 
+                Title: {self.title}
+                Completed: {self.completed}
+                Description: {self.description}
+                Skills: {self.skills}
                 GitHub: {self.url})>'''
