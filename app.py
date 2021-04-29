@@ -2,21 +2,22 @@ from flask import render_template, url_for, request, redirect
 from models import app, db, Project
 import datetime
 
-projects = Project.query.order_by(Project.id.desc()).all()
-
 
 @app.route('/')
 def index():
+    projects = Project.query.order_by(Project.id.desc()).all()
     return render_template('index.html', projects=projects)
 
 
 @app.route('/about')
 def about():
+    projects = Project.query.order_by(Project.id.desc()).all()
     return render_template('about.html', projects=projects)
 
 
 @app.route('/project/new', methods=['GET', 'POST'])
 def add_project():
+    projects = Project.query.order_by(Project.id.desc()).all()
     if request.form:
         year, month = request.form['date'].split('-')
         date = datetime.datetime(year=int(year), month=int(month), day=1)
@@ -33,13 +34,17 @@ def add_project():
 
 @app.route('/project/<id>/edit', methods=['GET', 'POST'])
 def edit_project(id):
+    projects = Project.query.order_by(Project.id.desc()).all()
     project = Project.query.get_or_404(id)
     if request.form:
         project.title = request.form['title']
-        project.completed = request.form['date']
-        project.description = request.form['description']
-        project.skills = request.form['skills-list']
+        year, month = request.form['date'].split('-')
+        date = datetime.datetime(year=int(year), month=int(month), day=1)
+        project.completed = date
+        project.description = request.form['desc']
+        project.skills = request.form['skills']
         project.url = request.form['github']
+        db.session.commit()
         return redirect(url_for('index'))
     return render_template('editproject.html',
                            project=project,
@@ -48,6 +53,7 @@ def edit_project(id):
 
 @app.route('/project/<id>', methods=['GET', 'POST'])
 def project(id):
+    projects = Project.query.order_by(Project.id.desc()).all()
     project = Project.query.get_or_404(id)
     return render_template('detail.html',
                            project=project,
@@ -56,6 +62,7 @@ def project(id):
 
 @app.route('/project/<id>/delete')
 def delete_project(id):
+    projects = Project.query.order_by(Project.id.desc()).all()
     project = Project.query.get_or_404(id)
     db.session.delete(project)
     db.session.commit()
@@ -64,6 +71,7 @@ def delete_project(id):
 
 @app.errorhandler(404)
 def not_found(error):
+    projects = Project.query.order_by(Project.id.desc()).all()
     return render_template('404.html', msg=error), 404
 
 
