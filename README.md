@@ -1,4 +1,4 @@
-# Personal-Website-Flask-App
+# Personal Website Flask App
  ## Project Description:
  This project is a personal portfolio website built using Python, Flask, and SQLAlchemy (as well as some basic front end CSS and HTML). The website contains a home page that contains a brief about me sections, as well as a Skills sections and a Project section. The user can view each projects detail individually and can edit each project or add a new project. There is also an about me page with more in depth detail about my experience, background and interest. 
 
