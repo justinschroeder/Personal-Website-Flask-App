@@ -30,6 +30,7 @@
                     {% for project in projects %}
                         <li>
                             <p class="title">{{ project.title }}</p>
+                            <p class="completed">{{ project.completed.strftime('%B %Y') }}</p>
                             <p class="desc">{{ project.description }}</p>
                             <a href="{{ project.url }}">
                                 <i class="fab fa-github"> View on GitHub</i>

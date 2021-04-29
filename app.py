@@ -2,22 +2,21 @@ from flask import render_template, url_for, request, redirect
 from models import app, db, Project
 import datetime
 
+projects = Project.query.order_by(Project.id.desc()).all()
+
 
 @app.route('/')
 def index():
-    projects = Project.query.all()
     return render_template('index.html', projects=projects)
 
 
 @app.route('/about')
 def about():
-    projects = Project.query.all()
     return render_template('about.html', projects=projects)
 
 
 @app.route('/project/new', methods=['GET', 'POST'])
 def add_project():
-    projects = Project.query.all()
     if request.form:
         year, month = request.form['date'].split('-')
         date = datetime.datetime(year=int(year), month=int(month), day=1)
@@ -34,7 +33,6 @@ def add_project():
 
 @app.route('/project/<id>/edit', methods=['GET', 'POST'])
 def edit_project(id):
-    projects = Project.query.all()
     project = Project.query.get_or_404(id)
     if request.form:
         project.title = request.form['title']
@@ -50,7 +48,6 @@ def edit_project(id):
 
 @app.route('/project/<id>', methods=['GET', 'POST'])
 def project(id):
-    projects = Project.query.all()
     project = Project.query.get_or_404(id)
     return render_template('detail.html',
                            project=project,

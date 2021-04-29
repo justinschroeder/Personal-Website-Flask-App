@@ -476,6 +476,10 @@ Projects
     font-size: 20px;
 }
 
+#projects .completed {
+    font-style: italic;
+}
+
 #projects .fab {
     color: rgb(57, 159, 255);
     font-size: 20px;
