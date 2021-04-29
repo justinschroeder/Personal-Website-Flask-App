@@ -15,7 +15,7 @@ def about():
     return render_template('about.html', projects=projects)
 
 
-@app.route('/add-project', methods=['GET', 'POST'])
+@app.route('/project/new', methods=['GET', 'POST'])
 def add_project():
     projects = Project.query.all()
     if request.form:
@@ -32,7 +32,7 @@ def add_project():
     return render_template('addproject.html', projects=projects)
 
 
-@app.route('/edit-project/<id>', methods=['GET', 'POST'])
+@app.route('/project/<id>/edit', methods=['GET', 'POST'])
 def edit_project(id):
     projects = Project.query.all()
     project = Project.query.get_or_404(id)
@@ -43,17 +43,21 @@ def edit_project(id):
         project.skills = request.form['skills-list']
         project.url = request.form['github']
         return redirect(url_for('index'))
-    return render_template('editproject.html', project=project, projects=projects)
+    return render_template('editproject.html',
+                           project=project,
+                           projects=projects)
 
 
 @app.route('/project/<id>', methods=['GET', 'POST'])    
 def project(id):
     projects = Project.query.all()
     project = Project.query.get_or_404(id)
-    return render_template('detail.html', project=project, projects=projects)
+    return render_template('detail.html',
+                           project=project,
+                           projects=projects)
 
 
-@app.route('/delete/<id>')
+@app.route('/project/<id>/delete')
 def delete_project(id):
     project = Project.query.get_or_404(id)
     db.session.delete(project)

@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
     {% block content %}
-        <section class="header-add">
+        <section class="header-form">
             <h1>New Project</h1>
         </section>
         <section id="form">
@@ -17,7 +17,7 @@
                 <label for="github">GitHub Link</label>
                 <input type="url" name="github" id="github" placeholder="Link to the repo" required>
                 <div>
-                    <button type="reset">Cancel</button>
+                    <button type="reset"><a href="{{ url_for('index') }}">Cancel</a></button>
                     <button type="submit">Submit</button>
                 </div>
             </form>

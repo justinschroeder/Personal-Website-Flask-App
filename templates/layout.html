@@ -15,9 +15,9 @@
         <ol>
           <li class="menu-item"><a href="{{ url_for('index') }}">Home</a></li>
           <li class="menu-item"><a href="{{ url_for('about') }}">About</a></li>
-          <li class="menu-item"><a href="#skills">Skills</a></li>
+          <li class="menu-item"><a href="{{ url_for('index') }}#skills">Skills</a></li>
           <li class="menu-item">
-            <a href="#0">Projects</a>
+            <a href="{{ url_for('index') }}#projects">Projects</a>
             <ol class="sub-menu">
               {% for project in projects %}
                 <li><a class="menu-item" href="{{ url_for('project', id=project.id) }}">{{ project.title }}</a></li>
@@ -25,19 +25,15 @@
             </ol>
           </li>
 
-          <li class="menu-item"><a href="#footer">Contact</a></li>
+          <li class="menu-item"><a href="{{ url_for('index') }}#footer">Contact</a></li>
           <li class="menu-item"><a href="{{ url_for('add_project') }}">Add Project</a></li>
         </ol>
       </nav>
         {% block content %}
         {% endblock %}
-        <section class="footer">
-          <div class="socials">
-              <!--Delete any you don't use-->
-              <!--Icons from FontAwesome.com/icons-->
-              <a href="mailto: justin.schroeder3@gmail.com">
-                <i class="fas fa-paper-plane"></i>
-              </a>
+        <section id="footer">
+          <p>Contact me at <a href="mailto. justin.schroeder3@gmail.com">justin.schroeder3@gmail.com</a>.</p>
+          <div class="socials"> 
               <a href="">
                   <i class="fab fa-linkedin"></i>
               </a>

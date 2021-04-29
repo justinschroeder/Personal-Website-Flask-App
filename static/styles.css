@@ -3,23 +3,14 @@ Colors
 *******/
 :root {
     --primary-text: #eaf3ff;
-    --secondary-text: #5e8ab3;
+    --secondary-text: #2d65ff;
     --third-text: #1f1f1f9d;
-    --accent-text: #ffba6c;
+    --accent-text: #84ffd0d0;
     --primary: #1d1d1d;
     --secondary: #aaaaaa;
-    --third: #2a3a4b;
+    --third: #1e63ad;
     --accent: #a8a591;
 }
-
-/* :root {
-    --primary-text: #51475c;
-    --secondary-text: #ab6c82;
-    --primary: #475c7a;
-    --secondary: #fcbb6d;
-    --accent: #d8737f;
-    --white:  #fff;
-} */
 
 /*******
 FONT
@@ -55,9 +46,13 @@ body {
 
 /*******
 Nav
+
+Credit: https://codepen.io/jenning/pen/wXQJeP
+I used the CSS/HTML from the template above for my nav bar and put my own styling on it.
+
 *******/
 .menu {
-    background: black;
+    background-color: rgb(22, 22, 22);
     height: 4rem;
     position: fixed;
     top: 0%;
@@ -112,12 +107,16 @@ Nav
 }
 
 .sub-menu .menu-item {
-    padding: 0.75rem 0;
-    background: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: rgb(22, 22, 22);
     opacity: 0;
     transform-origin: bottom;
     animation: enter 0.2s ease forwards;
+    width: fit-content;
+    font-size: 80%;
 }
+
 .sub-menu .menu-item:nth-child(1) {
     animation-duration: 0.2s;
     animation-delay: 0s;
@@ -140,7 +139,7 @@ Nav
 }
 @media screen and (max-width: 600px) {
     .sub-menu .menu-item {
-    background: #000000;
+        background-color: rgb(22, 22, 22);
     }
 }
 
@@ -160,7 +159,7 @@ Nav
     }
     .menu > ol {
     display: none;
-    background: #000000;
+    background-color: rgb(22, 22, 22);
     flex-direction: column;
     justify-content: center;
     height: 100vh;
@@ -170,6 +169,7 @@ Nav
     flex: 0;
     opacity: 0;
     animation: enter 0.3s ease-out forwards;
+
     }
     .menu > ol > .menu-item:nth-child(1) {
     animation-delay: 0s;
@@ -284,6 +284,19 @@ Header  - Homepage
 	-webkit-text-fill-color: transparent;
 }
 
+.header-form h1{
+    font-weight: bold;
+    color: var(--secondary-text);
+    margin-top: 5%;
+    margin-bottom: 1rem;
+    font-size: 80px;
+	text-transform: uppercase;
+	background: linear-gradient(to right, #003cff 40%, #4d76ff 60%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
 .header h2 {
     font-size: 60px;
     font-weight: bold;
@@ -316,17 +329,6 @@ Header  - Homepage
 /***************
 Header - Detail
 ***************/
-.header-add {
-    margin-top: 5rem;
-    margin-bottom: 5rem ;
-    text-align: center;
-    text-shadow: 2px 2px 8px #0000006c;
-}
-
-.header-add h1 {
-    font-size: 60px;
-    font-weight: bold;
-}
 
 .header-about {
     margin-top: 3rem;
@@ -364,14 +366,6 @@ Header - Detail
 /*******
 About
 *******/
-
-/* .row {
-    display: flex;
-  }
-  
-  .column {
-    flex: 25%;
-  } */
 
 #about {
     padding: 1%;
@@ -412,11 +406,9 @@ About
 Skills
 *******/
 #skills {
-    background-color: rgba(27, 27, 27, 0.466);
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 5%;
+    padding: 5%;
     border-radius: 10px;
-    padding: 1%;
 }
 
 
@@ -424,25 +416,19 @@ Skills
 	background: linear-gradient(to right, #003cff 45%, #4d76ff 55%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-    text-align: center;
-
-}
-
-#skills i {
-    color: rgb(30, 45, 255);
-    font-size: 50px;
     text-align: left;
-    margin-left: 10%;
-    float: left;
+
 }
 
 #skills ul {    
-    text-align: center;
+    text-align: left;
+    margin-left: -3%;
 }
 
 #skills li {
     list-style-type: none;
     line-height: 10px;
+    text-align: left;
 }
 
 
@@ -451,161 +437,135 @@ Projects
 *******/
 
 #projects {
-    background-color: rgba(27, 27, 27, 0.466);
     margin: 5%;
     border-radius: 10px;
-    padding: 1%;
+    padding: 5%;
 }
 
 #projects h2 {
 	background: linear-gradient(to right, #00ffb3 45%, #6bffd2 55%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-    text-align: center;
+    text-align: left;
 }
 
-#projects .column{
-    columns: 2;
-}
 
 #projects ul {
     margin-top: -3rem;
+    margin-left: -3%;
 }
 
 #projects li {
     list-style-type: none;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+#projects .title,
+#projects .fab,
+#projects .desc {
+    vertical-align: middle;
 }
 
 #projects .title {
-    margin-left: 10%;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+#projects .desc {
     font-size: 20px;
-    vertical-align: middle;
 }
 
-#projects .url {
-    margin-left: 10%;
+#projects .fab {
+    color: rgb(57, 159, 255);
     font-size: 20px;
-    vertical-align: middle;
 }
 
-/* .github-btn {
-    border-radius: 10px;
-    background-color: var(--primary);
-    padding: 8px 15px;
-    color: var(--white);
-    text-decoration: none;
+#projects .fab:hover {
+    color:rgb(131, 255, 203);
+    transition: all .5s;
 }
-
-.github-btn i {
-    color: var(--white);
-}
-
-
-#projects .column {
-    background-color:var(--primary);
-    border-radius: 10px;
-    padding: 2%;
-    margin-right: 10%;
-    margin-bottom: 2%;
-}
-
-#project .column p {
-    text-align: center;
-}
-
-#projects .column:hover {
-    transform: scale(1.05);
-    transition: all .75s;
-} */
-
-/*******
-Contact
-*******/
-
-/* #contact {
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-#contact .fa-paper-plane {
-    font-size: 34px;
-    margin-bottom: 1rem;
-    margin-top: 3rem;
-    color: var(--accent);
-}
-
-#contact  h2 {
-    margin-bottom: 1rem;
-    font-size: 30px;
-}
-
-#contact p {
-    text-align: center;
-    padding-left: 20%;
-    padding-right: 20%;
-    margin-bottom: 2rem;
-}
-
-#contact p  i {
-    margin-right: 15px;
-} */
 
 /*******
 Footer
 *******/
 
-.footer {
+#footer {
     text-align: center;
     padding-bottom: .5rem;
     background-color: rgb(22, 22, 22);
 }
 
-.footer  i,
-.footer p,
-.footer a {
-    color: var(--white);
+#footer  i,
+#footer p,
+#footer a {
     text-decoration: none;
 }
 
-.footer .socials  {
+#footer .socials  {
+    color: white;
     padding-top: 2rem;
     margin-bottom: 1rem;
 }
 
-.footer .socials i {
+#footer .socials i {
     font-size: 30px;
     padding: 0  10px;
 }
 
-.footer svg {
+#footer svg {
     height: 20px;
     width: 20px;
 }
 
+#footer p {
+    padding-top: 1%;
+}
 /********************
 Description - Detail
 ********************/
 
-#project-desc  {
-    background-color: var(--secondary);
-    position: relative;
-    text-align: center;
-    padding-right: 5%;
-    padding-left: 5%;
+.project-details .header {
+    margin-right: 10%;
+    margin-bottom: 1%;
 }
 
+.project-details .header .completed {
+    font-size: 32px;
+}
+
+.project-details .header .fab {
+    color: rgb(57, 159, 255);
+    font-size: 24px;
+}
+    
+.project-details .header .fab:hover {
+    color:rgb(131, 255, 203);
+    transition: all .25s;
+}
+
+#project-desc {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+}
 
 #project-desc h2 {
-    padding-top: 3rem;
-    margin-bottom: 3rem;
+    font-size: 40px;
+    text-decoration: underline;
 }
 
-#project-desc p {
-    text-align: left;
-    padding-bottom: 4rem;
+#project-skills {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2%;
 }
+
+#project-skills h2 {
+    font-size: 40px;
+    text-decoration: underline;
+}
+
 
 /********************
 Buttons - Detail
@@ -648,10 +608,11 @@ Form
 
 #form input,
 #form textarea {
+    color: var(--secondary-text);
     border: none;
     border: 2px solid;
     border-radius: 10px;
-    border-color: var(--secondary-text);
+    border-color: var(--accent-text);
     width: 300px;
     height: 72px;
     display: block;
@@ -699,11 +660,11 @@ Form
 
 #form button[type='reset'] {
     margin-right: 10px;
-    background-color: var(--white);
+    background-color: var(--secondary);
 }
 
 #form button[type='submit'] {
-    background-color: var(--secondary);
+    background-color: var(--third);
 }
 
 /********************
@@ -716,43 +677,40 @@ EXCEEDS - About Page
     margin-right: 10%;
 }
 
-#about-page h2 {
-    margin-bottom: 2rem;
-    display: inline-block;
-}
-
-#about-page .header h1 {
-    text-align: center;
-}
-
 #about-page p {
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-align: left;
-    margin-bottom: 5rem;
     margin-right: 2rem;
-    display: inline-block;
 }
 
-#about-page a {
-    background-color: var(--accent);
+#about-page .resume a {
+    background-color: var(--third);
     text-decoration: none;
     color: var(--white);
     border-radius: 10px;
     font-size: 20px;
     padding: 9px 40px;
+    align-items: center;
 }
 
-#about-page a i {
+#about-page .resume a i {
     color: var(--white);
     font-size: 20px;
     padding-right: 10px;
+    align-items: center;
 }
 
-#about-page img {
-    display: inline-block;
-    vertical-align: top;
-    border-radius: 10%;
+#about-page .one {
+    border-radius: 10px;
     width: 25%;
+    margin-bottom: 5%;
+}
+
+#about-page .two {
+    border-radius: 10px;
+    width: 74%;
+    margin-bottom: 5%;
+    text-align: center;
 }
 
 /*******
@@ -764,34 +722,6 @@ Media Queries
         font-size: 62px;
     }
 
-    /* .header h1 {
-        font-size: 64px;
-        margin-bottom: 2rem;
-    } */
-
-    .header img {
-        height: 320px;
-        width: 320px;
-    }
-
-    /* .navigation {
-        width: fit-content;
-        margin: auto; 
-    }
-
-    .navigation .navbar-brand {
-        margin-right: 5rem;
-        font-size: 34px;
-    }
-
-    .navigation button {
-        display: none;
-    }
-
-    .navigation .nav-item {
-        padding-left: 5px;
-        padding-right: 5px;
-    } */
 
     #about p {
         padding-left: 5%;
@@ -806,18 +736,13 @@ Media Queries
 
 
     #skills ul {
-        column-count: 3;
+        column-count: 2;
         text-align: center;
         list-style-type: none;
     }
 
-    .footer .socials i {
+    #footer .socials i {
         padding: 0  20px;
-    }
-
-    #project-desc  {
-        padding-right: 15%;
-        padding-left: 15%;
     }
 
     #form input,

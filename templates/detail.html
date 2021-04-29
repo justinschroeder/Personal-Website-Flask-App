@@ -1,12 +1,21 @@
 {% extends 'layout.html' %}
     {% block content %}
+    <section class="project-details">
         <section class="header">
-            <h1>{{ project.title }}</h1>
-            <p>{{ project.completed.strftime('%B %Y') }}</p>
+            <h2 class="title">{{ project.title }}</h2>
+            <p class="completed">Completed: {{ project.completed.strftime('%B %Y') }}</p>
             <a href="{{ project.url }}" class="github-btn">
-                <i class="fab fa-github"></i>
-                View on GitHub
+                <i class="fab fa-github"> View on GitHub</i>
             </a>
+        </section>
+        <section id="project-desc">
+            <h2>Description</h2>
+            <p>
+                {{ project.description }}
+            </p>
+        </section>
+        <section id="project-skills">
+            <h2>Skills/Tools Used:</h2>
             <ul class="project-skills">
                 <div>
                     {% for skill in project.skills.split(', ') %}
@@ -14,14 +23,6 @@
                     {% endfor %}
                 </div>
             </ul>
-        </section>
-        <section id="project-desc">
-            <div id="triangle5"></div>
-            <h2>Description</h2>
-            <p>
-                {{ project.description }}
-            </p>
-            <div id="triangle6"></div>
         </section>
         <section id="edit-delete">
             <a href="{{ url_for('edit_project', id=project.id) }}">
@@ -33,4 +34,5 @@
                 Delete
             </a>
         </section>
+    </section>
     {% endblock %}
