@@ -113,8 +113,9 @@ I used the CSS/HTML from the template above for my nav bar and put my own stylin
     opacity: 0;
     transform-origin: bottom;
     animation: enter 0.2s ease forwards;
-    width: fit-content;
-    font-size: 80%;
+    font-size: 70%;
+    width: 150%;
+    margin-left: -25%;
 }
 
 .sub-menu .menu-item:nth-child(1) {
