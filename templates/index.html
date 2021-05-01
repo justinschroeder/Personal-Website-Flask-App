@@ -4,14 +4,14 @@
             <h1>Justin Schroeder</h1>
             <h2>Developer</h2>
             <p>
-                Developer. Engineer. Skier. Disc Golfer. Dog Dad.
+                Engineer. Skier. Disc Golfer. Dog Dad.
             </p>
             <p>
                 <a href="{{ url_for('about') }}" style="text-decoration: underline;">More about me...</a>
             </p>
         </section>
         <section id="skills">
-            <h2>Skills</h2>
+            <h3>Skills</h3>
             <ul>
                 <li>Python</li>
                 <li>Flask</li>
@@ -19,13 +19,12 @@
                 <li>SQL</li>
                 <li>HTML</li>
                 <li>CSS</li>
-                <li>JavaScript</li>
                 <li>GitHub</li>
                 <li>Visual Studio Code</li>
             </ul>
         </section>
         <section id="projects">
-            <h2>Projects</h2>
+            <h3>Projects</h3>
             {% for row in projects|batch(3) %}
             <div class="row">
                 {% for project in row %}
