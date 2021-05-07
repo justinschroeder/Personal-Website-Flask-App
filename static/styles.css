@@ -1,17 +1,7 @@
-/* 
-========================================= 
-========================================= 
-
-Bootstrapious Boilerplate Template
-
-========================================= 
-========================================= */
 /*
-*
 * =====================
 * GENERAL
 * =====================
-*
 */
 .text-bold {
   font-weight: 700;
@@ -201,9 +191,6 @@ SKILLS SECTION
 *
 */
 
-body{
-  font-family: Helvetica, Arial, sans-serif;
-}
 .skills{
   width: 50%;
   margin: 0 auto;
