@@ -98,7 +98,7 @@ NAVBAR
 */
 
 /* Style the navbar */
-#navbar {
+nav {
   overflow: hidden;
   background: #fff;
   padding-top: 0;
@@ -108,18 +108,17 @@ NAVBAR
   width: 100%;
 }
 
-#navbar a {
-  position: relative;
-  top: 1px;
+.navlinks  {
+  height: 100%;
+  padding-top: 1%;
+  display: flex;
+  list-style-type: none;
   color: rgb(78, 76, 76);
+  font-size: 20px;
   font-style: italic;
   border-bottom: 1px solid transparent;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  float: left;
-  display: block;
-  text-align: center;
-  padding: 14px;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* Navbar links */
@@ -140,18 +139,6 @@ NAVBAR
 .sticky + .content {
   padding-top: 60px;
 }
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-}
-
 /*
 *
 =====================
@@ -213,14 +200,83 @@ SKILLS SECTION
 =====================
 *
 */
-.services .box {
-  margin-top: 20px;
+
+body{
+  font-family: Helvetica, Arial, sans-serif;
+}
+.skills{
+  width: 50%;
+  margin: 0 auto;
 }
 
-.services .icon {
-  font-size: 50px;
-  color: #262626;
-  margin-bottom: 10px;
+.skills h1 {
+ text-align: center;
+ color: rgb(78, 76, 76);
+}
+
+@keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-webkit-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-moz-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-o-keyframes load{
+  from {
+    width: 0%
+  }
+}
+
+.bar{
+  background-color: #EEE;
+  padding: 2px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #FFF;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.bar::before{
+  content:  attr(data-skill);
+  background-color: rgb(99, 95, 95);
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+  -webkit-animation: load 2s 0s;
+  -moz-animation: load 2s 0s;
+  -o-animation: load 2s 0s;
+}
+
+.bar.front::before{
+  background-color: rgb(136, 131, 131);
+}
+.bar.back::before{
+  background-color: rgb(194, 189, 189);
+}
+
+.bar.beginner::before{
+  width: calc(10% - 20px);
+}
+.bar.basic::before{
+  width: calc(25% - 20px);
+}
+.bar.intermediate::before{
+  width: calc(50% - 20px);
+}
+.bar.advanced::before{
+  width: calc(75% - 20px);
+}
+.bar.expert::before{
+  width: calc(100% - 20px);
 }
 
 /*
