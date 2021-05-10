@@ -38,10 +38,10 @@
             <div class="about">
               <h1>About Me</h1>
               <p>
-                  My name is Justin Schroeder and I am an aspiring Python Developer and Data Analyst currently based in Nashville, TN. I recently completed Python Development and Data Analyst programs through Treehouse and DataCamp, respectively. I also hold a Bachelors of Science in Aerospace Engineering.
-              </p>
-              <p>
-                  I have always been intrigued by data and have always enjoyed finding ways to make process more efficient. My recent study of Python has allowed me to tap into my passion for not only solving problems using data, but also enlightened me to a new passion of development!
+                  My name is Justin Schroeder and I am an aspiring Python Developer and Data Analyst currently based in Nashville, TN. I recently completed Python Development and Data Analyst programs through Treehouse and DataCamp!
+                  </p>
+                  <p>
+                 My professional background is in Automotive Manufacturing with 6 years of experience working for General Motors as a Quality Engineer and I also hold a Bachelors of Science in Aerospace Engineering. I love to solve problems with data and have a passion for finding ways to make processes more efficient! See my work below. 
               </p>
             </div>
             <div class="skills">
@@ -59,9 +59,7 @@
         </section>
         <section id="projects">
             <h3>Projects</h3>
-            {% for row in projects|batch(3) %}
-            <div class="row">
-                {% for project in row %}
+                {% for project in projects %}
                 <div class="column">
                     <div class="card">
                     <a href="{{ url_for('project', id=project.id) }}">
@@ -72,8 +70,6 @@
                     </div>
                 </div>
                 {% endfor %}
-            </div>
-            {% endfor %}
         </section>
         <section id="footer">
             <p>Contact me at <a href="mailto. justin.schroeder3@gmail.com">justin.schroeder3@gmail.com</a>.</p>

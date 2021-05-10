@@ -34,7 +34,7 @@ section {
 
 @media (max-width: 767.98px) {
   section {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 }
 
@@ -129,7 +129,7 @@ nav a:hover {
 
 /* Page content */
 .content {
-  padding: 16px;
+  padding: 50px;
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
@@ -141,7 +141,7 @@ nav a:hover {
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .content {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 /*
 *
